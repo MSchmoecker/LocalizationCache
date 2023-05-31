@@ -7,7 +7,7 @@ namespace LocalizationCache {
     public class Plugin : BaseUnityPlugin {
         public const string ModName = "LocalizationCache";
         public const string ModGuid = "com.maxsch.valheim.LocalizationCache";
-        public const string ModVersion = "0.0.0";
+        public const string ModVersion = "0.1.0";
 
         internal static ManualLogSource Log { get; private set; }
         private Harmony harmony;

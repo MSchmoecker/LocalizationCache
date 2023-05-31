@@ -1,7 +1,7 @@
 {
   "name": "LocalizationCache",
   "description": "A small mod that caches localization loading, which can help improve startup performance and reduce possible connection timeouts",
-  "version_number": "0.0.0",
+  "version_number": "0.1.0",
   "website_url": "https://github.com/MSchmoecker/LocalizationCache",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2105"

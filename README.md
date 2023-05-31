@@ -24,3 +24,8 @@ Extract all files to `BepInEx/plugins/LocalizationCache`
 - [Thunderstore](https://valheim.thunderstore.io/package/MSchmoecker/LocalizationCache/)
 - [Github](https://github.com/MSchmoecker/LocalizationCache)
 - Discord: Margmas#9562. Feel free to DM or ping me, for example in the [Jötunn discord](https://discord.gg/DdUt6g7gyA)
+
+
+## Changelog
+0.1.0
+- Release
