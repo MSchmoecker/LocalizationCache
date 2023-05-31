@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="../Environment.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FE8B42E3-7082-4DFF-A5CC-6B62B0315ACA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LocalizationCache</RootNamespace>
+    <AssemblyName>LocalizationCache</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>$(R2MODMAN_INSTALL)\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\BepInEx\core\0Harmony.dll</HintPath>
+      <HintPath>$(R2MODMAN_INSTALL)\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_utils, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\valheim_Data\Managed\publicized_assemblies\assembly_utils_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_valheim, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\valheim_Data\Managed\publicized_assemblies\assembly_valheim_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_guiutils, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\valheim_Data\Managed\publicized_assemblies\assembly_guiutils_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>$(VALHEIM_INSTALL)\unstripped_corlib\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LocalizationPatches.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="../README.md">
+      <Link>README.md</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="../icon.png">
+      <Link>icon.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="../manifest.json">
+      <Link>manifest.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <FULL_DEPLOY_FOLDER>$(DEPLOY_FOLDER)/BepInEx/plugins/$(AssemblyName)</FULL_DEPLOY_FOLDER>
+    <TMP_DEPLOY_FOLDER>$(TargetDir)/tmp</TMP_DEPLOY_FOLDER>
+  </PropertyGroup>
+  <Target Name="AfterBuild">
+    <CallTarget Condition="Exists('$(DEPLOY_FOLDER)')" Targets="Deploy" />
+  </Target>
+  <Target Name="Deploy">
+    <Message Text="Deploing into: $(FULL_DEPLOY_FOLDER)" Importance="high" />
+    <MakeDir Directories="$(FULL_DEPLOY_FOLDER)" />
+
+    <!-- Create Thunderstore Zip -->
+    <RemoveDir Directories="$(TMP_DEPLOY_FOLDER)" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).dll" DestinationFolder="$(TMP_DEPLOY_FOLDER)" />
+    <Copy SourceFiles="$(TargetDir)icon.png" DestinationFolder="$(TMP_DEPLOY_FOLDER)" />
+    <Copy SourceFiles="$(TargetDir)README.md" DestinationFolder="$(TMP_DEPLOY_FOLDER)" />
+    <Copy SourceFiles="$(TargetDir)manifest.json" DestinationFolder="$(TMP_DEPLOY_FOLDER)" />
+    <ZipDirectory SourceDirectory="$(TMP_DEPLOY_FOLDER)" DestinationFile="$(FULL_DEPLOY_FOLDER)/$(AssemblyName)-Thunder.zip" Overwrite="true" />
+
+    <!-- Create Nexus Zip -->
+    <RemoveDir Directories="$(TMP_DEPLOY_FOLDER)" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).dll" DestinationFolder="$(TMP_DEPLOY_FOLDER)/plugins/$(AssemblyName)" />
+    <ZipDirectory SourceDirectory="$(TMP_DEPLOY_FOLDER)" DestinationFile="$(FULL_DEPLOY_FOLDER)/$(AssemblyName)-Nexus.zip" Overwrite="true" />
+
+    <!-- Unpack to deploy folder -->
+    <Unzip Condition="Exists('$(DEPLOY_FOLDER)')" SourceFiles="$(FULL_DEPLOY_FOLDER)/$(AssemblyName)-Thunder.zip" DestinationFolder="$(FULL_DEPLOY_FOLDER)" />
+  </Target>
+</Project>

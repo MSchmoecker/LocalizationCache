@@ -1,0 +1,13 @@
+# artifacts and packages
+bin/
+obj/
+packages/
+
+# environment
+Environment.props
+
+# Rider
+.idea/
+*.DotSettings.user
+_ReSharper.Caches/
+riderModule.iml
