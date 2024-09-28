@@ -11,16 +11,18 @@ namespace LocalizationCache {
         public const string ModVersion = "0.2.0";
 
         public static ConfigEntry<bool> EnableCache;
+        public static ConfigEntry<bool> CacheMods;
         public static ConfigEntry<bool> DebugTiming;
         public static ConfigEntry<bool> DebugStacktrace;
 
         internal static ManualLogSource Log { get; private set; }
-        private Harmony harmony;
+        internal static Harmony harmony;
 
         private void Awake() {
             Log = Logger;
 
             EnableCache = Config.Bind("1 - General", "Enable Cache", true, "Enable caching of localization files. Disable to compare loading times. Requires a restart to take effect");
+            CacheMods = Config.Bind("1 - General", "Cache Mods", true, "Cache localization calls from some mods. Breaks switching the language at runtime but can drastically improve loading time. Requires a restart to take effect");
             DebugTiming = Config.Bind("2 - Debug", "Log Timing", false, "Log timing information for Localization.SetupLanguage. Requires a restart to take effect");
             DebugStacktrace = Config.Bind("2 - Debug", "Log Stacktrace", false, "Log stacktrace for each Localization.SetupLanguage call. Requires a restart to take effect");
 
