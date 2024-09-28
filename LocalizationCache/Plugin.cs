@@ -8,7 +8,7 @@ namespace LocalizationCache {
     public class Plugin : BaseUnityPlugin {
         public const string ModName = "LocalizationCache";
         public const string ModGuid = "com.maxsch.valheim.LocalizationCache";
-        public const string ModVersion = "0.2.0";
+        public const string ModVersion = "0.3.0";
 
         public static ConfigEntry<bool> EnableCache;
         public static ConfigEntry<bool> CacheMods;

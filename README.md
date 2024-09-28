@@ -38,6 +38,10 @@ However, it will have the most impact on the client.
 
 
 ## Changelog
+
+0.3.0
+- Added caching of some mod translation loading calls, which can help a lot with many mods. However, this breaks switching languages in-game, as the mod translations are not reloaded. Can be disabled in the config.
+
 0.2.0
 - Fixed caching did not distinguish between different localization files, resulting in missing vanilla translations
 - Added config options for debugging timing and stacktrace
